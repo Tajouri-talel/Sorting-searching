@@ -1,0 +1,38 @@
+PROCEDURE insertionSort(VAR arr: ARRAY_OF_INTEGER, VAR n: INTEGER)
+{
+    i, key, j : INTEGER;
+
+    FOR i FROM 0 TO n DO  
+
+        temp := arr[i];
+        j := i - 1;
+ 
+    // Move elements of arr[0..i-1], that are greater than temp, to one position ahead of their current position 
+
+        WHILE (j >= 0 && arr[j] > temp) DO 
+        
+            temp[j + 1] := arr[j];
+            j := j - 1;
+        END_WHILE
+
+        arr[j + 1] := temp;
+    END_FOR
+END_PROCEDURE
+
+ALGORITHM INSERTION_SORT_CARDS
+
+VAR 
+cards : ARRAY_OF_INTEGER [13];
+n : INTEGER := arr.length;
+i: INTEGER; //counter
+
+BEGIN 
+cards := [4, 2, 5, 1, 13 ];
+
+insertionSort( cards, n);
+
+FOR i FROM 0 TO n DO 
+   WRITE cards[i] ;
+END_FOR
+
+END
